@@ -38,10 +38,20 @@ app.get("/api/waitlist", function (req, res) {
 app.post("/api/tables", function(req, res) {
 
     var newTable = req.body;
-  
-    tables.push(newTable);
-  
-    res.json(newTable);
+
+    console.log(newTable)
+
+    if (tables.length < 5) {
+        tables.push(newTable);
+        console.log(`Table ${newTable.name} has a reservation.`);
+        return res.json(true);
+         
+      } else {
+        waitlist.push(newTable);
+        console.log(`Table ${newTable.name} has been added to the waitlist.`);
+        return res.json(false);
+      }
+    
   });
 
 
