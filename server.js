@@ -7,14 +7,7 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var tables = [
-    {
-        Name: "person",
-        Phone: 123,
-        Email: 123,
-        ID: 123
-    }
-];
+var tables = [];
 
 var waitlist = [
     {
